@@ -4,6 +4,7 @@ class CreateReviews < ActiveRecord::Migration[5.1]
       t.text :content
       t.integer :rating
 
+      t.references :restaurant, foreign_key: true
       t.timestamps
     end
   end

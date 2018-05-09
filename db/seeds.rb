@@ -12,8 +12,8 @@ puts 'Populating restaurant list...'
 5.times do
     Restaurant.create(name: Faker::Ancient.titan,
                     address: Faker::Address.street_address,
-                    phone: Faker::PhoneNumber,
-                    category: %w[Szechuan Sichuanese Mala Hotpot Drypot].sample
+                    phone_number: Faker::PhoneNumber.phone_number,
+                    category: ["chinese", "italian", "japanese", "french", "belgian"].sample
                         )
 end
 puts "Done! Added #{Restaurant.count} gastronomic locales!"

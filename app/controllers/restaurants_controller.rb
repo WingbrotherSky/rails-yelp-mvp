@@ -25,7 +25,11 @@ class RestaurantsController < ApplicationController
   # POST /restaurants.json
   def create
     @restaurant = Restaurant.new(restaurant_params)
-
+    if @restaurant.save
+      redirect_to restaurant_path(@restaurant_params)
+    else
+      render :new
+    end
     # respond_to do |format|
     #   if @restaurant.save
     #     format.html { redirect_to @restaurant, notice: 'Restaurant was successfully created.' }
